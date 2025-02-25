@@ -10,6 +10,9 @@ WORKDIR /var/www/html
 # Expose HTTP port
 EXPOSE 8080
 
-# Start Apache HTTP server in the foreground
-CMD ["scl", "enable", "httpd24", "--", "httpd", "-D", "FOREGROUND"]
-# 활성화
+# SSL 설정 파일 삭제 (HTTPS 비활성화)
+RUN rm -f /usr/local/apache2/conf/extra/httpd-ssl.conf \
+    && rm -f /etc/httpd/conf.d/ssl.conf
+
+# 기본 HTTPD 실행
+CMD ["httpd", "-D", "FOREGROUND"]
