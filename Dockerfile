@@ -4,8 +4,8 @@ FROM default-route-openshift-image-registry.apps.ext2.mtp.local/registry/httpd-2
 # Set the working directory
 WORKDIR /var/www/html
 
-# Copy your custom HTML file
 #COPY index.html /var/www/html/index.html
+COPY src/main/resources/static/index.html /var/www/html/index.html
 
 # Expose HTTP port
 EXPOSE 8080
