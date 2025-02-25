@@ -4,8 +4,8 @@ FROM default-route-openshift-image-registry.apps.ext2.mtp.local/registry/httpd-2
 # Set the working directory
 WORKDIR /var/www/html
 
-#COPY index.html /var/www/html/index.html
-COPY src/main/resources/static/index.html /var/www/html/index.html
+# Spring Boot 빌드 후 정적 파일을 복사
+COPY target/classes/static/index.html /var/www/html/index.html
 
 # Expose HTTP port
 EXPOSE 8080
