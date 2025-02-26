@@ -5,8 +5,8 @@ FROM default-route-openshift-image-registry.apps.ext2.mtp.local/registry/httpd-2
 WORKDIR /var/www/html
 
 # 파일을 복사
-COPY src/main/resources/static/index.html ./index.html
-COPY target/classes/static/index.html ./index.html
+COPY src/main/resources/static/ /var/www/html/
+COPY target/classes/static/ /var/www/html/
 
 # Expose HTTP port
 EXPOSE 8080
