@@ -1,6 +1,9 @@
 # Base image
 FROM default-route-openshift-image-registry.apps.ext2.mtp.local/registry/httpd-24:latest
 
+# 사용자 정의 설정 적용
+COPY custom-httpd.conf /etc/httpd/conf/httpd.conf
+
 # Set the working directory
 WORKDIR /var/www/html
 
