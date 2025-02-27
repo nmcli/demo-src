@@ -8,8 +8,8 @@ COPY custom-httpd.conf /etc/httpd/conf/httpd.conf
 WORKDIR /var/www/html
 
 # 파일을 복사
-COPY src/main/resources/static/index.html /var/www/html/index.html
-COPY target/classes/static/index.html /var/www/html/index.html
+#COPY src/main/resources/static/index.html /var/www/html/index.html
+#COPY target/classes/static/index.html /var/www/html/index.html
 
 # Expose HTTP port
 EXPOSE 8080
